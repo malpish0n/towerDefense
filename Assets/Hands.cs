@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Hands : MonoBehaviour
 {
+
+    public SpriteRenderer hand;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,19 @@ public class Hands : MonoBehaviour
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
         transform.up = direction;
+
+        Debug.Log(transform.rotation.eulerAngles.z);
+        transform.up = direction;
+
+        if(transform.rotation.eulerAngles.z > 0 && transform.rotation.eulerAngles.z<180)
+        {
+            hand.flipX = false;
+        }
+        else
+        {
+            hand.flipX = true;
+
+        }
+
     }
 }
